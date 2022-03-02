@@ -1,0 +1,153 @@
+:root {
+    /* --main-accent-clr: #D82934;
+    --main-dark-clr: #232323; */
+    --main-accent-clr: #5865F2;
+    --main-dark-clr: #171717;
+    /* --main-accent-clr: #DA0037; */
+    --main-light-clr: #EDEDED;
+} 
+
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-dark-clr);
+    background: black;
+}
+
+/* Logo */
+
+.logo-container {
+    position: absolute;
+    height: 10vh;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    color: var(--main-light-clr);
+}
+
+.logo-container > p {
+    font-size: 1.75rem;
+}
+
+/* Nav Desktop */
+
+aside, #menu-btn, #overlay {
+    display: none;
+}
+
+#desktop-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+#desktop-nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+#desktop-nav ul li {
+    list-style: none;
+    margin: 0 40px;
+}
+
+#desktop-nav a {
+    opacity: 0.7;
+    position: relative;
+}
+
+#desktop-nav a:hover{
+    opacity: 1;
+}
+
+#desktop-nav a:hover::after, .current a::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+    background: var(--main-accent-clr);
+    height: 3px;
+    width: 100%;
+}
+
+a {
+    color: var(--main-light-clr);
+    text-decoration: none;
+}
+
+/* Mobile */
+
+.side-menu-open {
+    right: 0; 
+}
+
+.overlay-open {
+    display: block !important;
+    opacity: 0.5 !important;
+}
+
+@media only screen and (max-width: 600px) {
+    #desktop-nav {
+        display: none !important; 
+    }
+
+    aside, #menu-btn {
+        display: block !important;
+    }
+
+    aside {
+        width: 70vw;
+        height: 100vh;
+        background: red;
+        position: absolute;
+        right: -70vw;
+        transition: right 150ms ease;
+        z-index: 998;
+    }
+
+    #menu-btn {
+        position: absolute;
+        width: 75px;
+        height: 10vh;
+        background: blue;
+        right: 0;
+        transition: right 150ms ease;
+        z-index: 999;
+    }
+
+    #menu-btn div {
+        width: 50px;
+        height: 7px;
+        background: black;
+        margin: 10px auto;
+    }
+
+    #overlay {
+        position: absolute;
+        background: black;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 997;
+        transition: opacity 150ms ease;
+    }
+
+    #mobile-nav {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+    }
+
+    #mobile-nav ul li {
+        list-style: none;
+        margin: 100px 0;
+    }
+    
+}
