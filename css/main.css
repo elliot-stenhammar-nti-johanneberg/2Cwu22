@@ -17,6 +17,32 @@ body {
     background: black;
 }
 
+#container {
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas: 
+    'hd'
+    'mn'
+}
+
+header {
+    grid-area: hd;
+    background: var(--main-dark-clr);
+    display: flex;
+    justify-content: right;
+    /* border: var(--main-light-clr) 1px solid; */
+}
+
+main {
+    grid-area: mn;
+    background: var(--main-light-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
 /* Logo */
 
 .logo-container {
@@ -87,10 +113,23 @@ a {
 
 .overlay-open {
     display: block !important;
-    opacity: 0.5 !important;
+    animation-name: overlay-open;
+    animation-duration: 150ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease; 
 }
 
-@media only screen and (max-width: 600px) {
+@keyframes overlay-open {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 0.5;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
     #desktop-nav {
         display: none !important; 
     }
@@ -102,7 +141,7 @@ a {
     aside {
         width: 70vw;
         height: 100vh;
-        background: red;
+        background: var(--main-dark-clr);
         position: absolute;
         right: -70vw;
         transition: right 150ms ease;
@@ -116,14 +155,7 @@ a {
         background: blue;
         right: 0;
         transition: right 150ms ease;
-        z-index: 999;
-    }
-
-    #menu-btn div {
-        width: 50px;
-        height: 7px;
-        background: black;
-        margin: 10px auto;
+        /* z-index: 999; */
     }
 
     #overlay {
@@ -135,7 +167,6 @@ a {
         top: 0;
         left: 0;
         z-index: 997;
-        transition: opacity 150ms ease;
     }
 
     #mobile-nav {
@@ -147,7 +178,19 @@ a {
 
     #mobile-nav ul li {
         list-style: none;
-        margin: 100px 0;
+        margin: 75px 0;
+    }
+
+    #mobile-nav a {
+        font-size:1.5rem;
+    }
+
+    #menu-close-btn {
+        width: 50px;
+        height: 50px;
+        background: var(--main-light-clr);
+        margin: 10px 10px;
+        position: absolute;
     }
     
 }

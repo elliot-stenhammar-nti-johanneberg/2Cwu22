@@ -1,17 +1,24 @@
+// Add underline to current page in nav
 const path = window.location.pathname
 const activeNavBtn = document.getElementById(path)
 activeNavBtn.classList.add("current");
 
-const overlay = document.getElementById("overlay")
-const menu = document.getElementById("side-menu")
-overlay.addEventListener("click", () => {
+// Mobile side-nav open & close
+const menuBtnOpen = document.getElementById("menu-btn")
+menuBtnOpen.addEventListener("click", () => {
     menu.classList.toggle("side-menu-open")
     overlay.classList.toggle("overlay-open")
 })
 
-const menuBtn = document.getElementById("menu-btn")
+const menuBtnClose = document.getElementById("menu-close-btn")
+menuBtnClose.addEventListener("click", () => {
+    menu.classList.toggle("side-menu-open")
+    overlay.classList.toggle("overlay-open")
+})
 
-menuBtn.addEventListener("click", () => {
+const overlay = document.getElementById("overlay")
+const menu = document.getElementById("side-menu")
+overlay.addEventListener("click", () => {
     menu.classList.toggle("side-menu-open")
     overlay.classList.toggle("overlay-open")
 })
