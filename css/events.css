@@ -17,6 +17,10 @@ h2 {
     color: var(--main-light-clr);
 }
 
+p {
+    color: var(--main-light-clr)
+}
+
 #event-1 {
     grid-area: e1;
 }
@@ -47,16 +51,18 @@ h2 {
 
 .event {
     border-radius: 5px;
-    /* background: var(--main-dark-clr); */
-    background-image: url(https://picsum.photos/1000/1000);
-    background-size: cover;
+    background: var(--main-dark-clr);
     display: flex;
     justify-content: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .event:hover, .event:focus-within {
     background: red;
+}
+
+.text-container {
+    text-align: center;
 }
 
 @media only screen and (max-width: 700px) {
