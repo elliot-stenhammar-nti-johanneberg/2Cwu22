@@ -17,6 +17,15 @@ body {
     background: var(--main-light-clr);
 }
 
+h1 {
+    margin: 0;
+    font-size: 4rem;
+}
+
+h2 {
+    margin: 0;
+}
+
 h2 {
     margin: 0;
 }
@@ -104,6 +113,19 @@ aside, #menu-btn, #overlay {
 a {
     color: var(--main-light-clr);
     text-decoration: none;
+}
+
+.h-linebreak {
+    height: 2px;
+    width: 85%;
+    background: var(--main-dark-clr);
+    opacity: 0.4;
+    position: absolute;
+    bottom: 10px;
+}
+
+ul {
+    list-style: none;
 }
 
 /* Mobile */
