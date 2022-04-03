@@ -2,16 +2,6 @@
     grid-template-rows: 10vh auto;
 }
 
-main {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: 
-    'abt'
-    'mbs'
-    'rls'
-    'cnt'
-}
-
 h1 {
     font-size: 4rem;
     font-family: 'Lora', serif;
@@ -27,10 +17,12 @@ p {
 
 #members {
     grid-area: mbs;
+    padding: 75px 0;
 }
 
 #rules {
     grid-area: rls;
+    padding: 50px 0;
 }
 
 #contact {
@@ -65,10 +57,15 @@ svg {
 
 #members-list {
     display: flex;
+    gap: 5px;
+}
+
+#members-list ul {
+    padding: 0;
 }
 
 #members-list p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-left: 5px;
 }
 
@@ -79,14 +76,23 @@ svg {
 
 .col {
     text-align: left;
+    max-width: 50%;
 }
 
 .p-pic {
-    height: 2rem;
+    height: 1.5rem;
     border-radius: 50%;
 }
 
+#rules-svg {
+    margin-bottom: 50px;
+}
+
 @media only screen and (max-width: 700px) {
+    h1 {
+        font-size: 3rem;
+    }
+
     section {
         display: flex;
         flex-direction: column;
@@ -94,7 +100,6 @@ svg {
 
     #members {
         flex-flow: column-reverse;
-        padding: 100px 0;
     }
 
     .text {
