@@ -1,5 +1,9 @@
 // Add underline to current page in nav
-const path = window.location.pathname
+let path = window.location.pathname
+console.log(path)
+path = path.split("/")
+path = path[path.length-1]
+console.log(path)
 const activeNavBtn = document.getElementById(path)
 activeNavBtn.classList.add("current");
 
